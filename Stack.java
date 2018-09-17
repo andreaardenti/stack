@@ -41,14 +41,19 @@ public class Stack {
         array[array.length-1] = newValue;
     }
 
-    public int getMin(){
+    public int[] getMin(){
+        int[] response = new int[2];
         int min = this.array[0];
+        int position = 0;
         for (int i=1; i < this.array.length; i++) {
             if (min > this.array[i]) {
                 min = this.array[i];
+                position = i;
             }
         }
-        return min;
+        response[0] = min;
+        response[1] = position;
+        return response;
     }
 
     public int getMax(){
@@ -59,6 +64,13 @@ public class Stack {
             }
         }
         return max;
+    }
+
+    public int replaceMin(int value) {
+        int[] p = this.getMin();
+        int position = p[1];
+        this.array[position] = value;
+        return p[0];
     }
 
 }

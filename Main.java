@@ -15,7 +15,10 @@ public class Main {
         s.shift(12);
 
         s.unshift(40);*/
-        int y = s.getMin();
+        //int y = s.getMin();
         int z = s.getMax();
+
+        int y = s.replaceMin(100);
+
     }
 }
